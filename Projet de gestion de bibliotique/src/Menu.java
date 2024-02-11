@@ -33,6 +33,7 @@ class Menu {
                     break;
                 case 4:
                     library.AfficherUnLivre();
+                    break;
                 case 5:
                     System.out.println("Sortie...");
                     break;
