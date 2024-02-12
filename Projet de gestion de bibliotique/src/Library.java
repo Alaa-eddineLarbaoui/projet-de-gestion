@@ -125,9 +125,18 @@ class Library {
         System.out.print("Entrer l'id : ");
         NStudent.id = scanner.nextLine();
         System.out.print("Le nom de livre emprunter :");
-        NStudent.livre = scanner.nextLine();
-        studentsListe.add(NStudent);
-        System.out.println("----> L'apprenant a été ajouté avec succès.");
+        String bookReserve = new Scanner(System.in).nextLine();
+
+        for (int i = 0; i < booksListe.size(); i++) {
+            if (booksListe.get(i).titre.equalsIgnoreCase(bookReserve)) {
+                NStudent.livre=booksListe.get(i).titre;
+                studentsListe.add(NStudent);
+                System.out.println("book has been successfully reserved!");
+            } else {
+                System.out.println("The book you want do not exist");
+            }
+
+        }
         System.out.println("──────────────────────────────────────────────");
         System.out.println();
     }
@@ -188,7 +197,7 @@ class Library {
             System.out.println("--->La liste des apprenants est vide. ");
             System.out.println("------------------------------");
         } else {
-            System.out.println("Voici la liste des apprenants existants  ");
+            System.out.println("Voici la liste des Livres emprunter :");
             for (int i = 0; i < studentsListe.size(); i++) {
                 System.out.println();
                 System.out.println("├──────────────────────────────────────────────┤");
